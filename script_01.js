@@ -145,26 +145,49 @@ function getSentenceArr(arr) {
 /*** 01b. Funktionalität mit Array 2  */
 // Transponierung:  untereinander ---> nebeneinander
 // Helge Schneider: Anananandereihung ...
-output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich."]));
-output(getSentenceArr2(["Ich","bin","die","Maxine."]));
-output(getSentenceArr2(["Ich","bin."]));
+// output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+// output(getSentenceArr2(["Ich","bin","die","Maxine"]));
+// output(getSentenceArr2(["Ich","bin"]));
 function getSentenceArr2(arr) {
     const GAP = " ";
     const PUNCT = ".";
     let str = "";
 
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) 
+    {
         str += arr[i] + GAP;
         // output(str); 
     }
 
-    str = str;
+    str = str + PUNCT;
 
    return str;
 }
 
+//Challenge-Ohne Fullstop
+output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+output(getSentenceArr2(["Ich","bin","die","Maxine"]));
+output(getSentenceArr2(["Ich","bin"]));
+function getSentenceArr2(arr) {
+    const GAP = " ";
+    const PUNCT = ".";
+    let str = "";
+
+    for (let i = 0; i < arr.length; i++) 
+    {
+        if (i == arr.length -1)
+        {
+            str += arr[i] + PUNCT; 
+        }
+        else
+        {
+            str += arr[i] + GAP;
+        }
+    }
 
 
+   return str;
+}
 
 
 // Modul: Ausgabe in Konsole : Test
@@ -172,4 +195,3 @@ function getSentenceArr2(arr) {
 function output(outputStr) {
     console.log(outputStr);
 }
-
